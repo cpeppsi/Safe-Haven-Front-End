@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
 
 function App() {
+  const [pets, setPets] = useState([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const URL = `${process.env.REACT_APP_BACKEND_URI}/pets`
+      const response = await fetch(URL)
+      const data = await response.json()
+      setPets(data)
+    }
+    fetchData()
+  }, [])
+
+  const display = pets.map(pet => {
+    return (
+      <div key={pet._id}>
+        <p>{pet.petName}</p>
+      </div>
+    )
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Safe-Haven CRUD</h1>
+      {display}
     </div>
   );
 }
