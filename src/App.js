@@ -1,16 +1,22 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
 import Pet from "./Components/Pet";
+import New from "./Components/New";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/pets/:id" element={<Pet />} />
-      </Routes>
-    </Router>
+    <div>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/pets/:id" element={<Pet />} />
+          <Route path="/new" element={<New />} />
+        </Routes>
+      </Router>
+    </div>
   )
 }
 
