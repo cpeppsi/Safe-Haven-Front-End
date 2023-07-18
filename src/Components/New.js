@@ -40,8 +40,8 @@ function New() {
 
   //Pet Form  
   return (
-    <form onChange={handleChange}>
-
+    <form onSubmit={handleSubmit}>
+      <div>
         <label>
             Image URL:
             <input
@@ -51,7 +51,9 @@ function New() {
             onChange={handleChange}
             />
         </label>
+      </div>
 
+      <div>
         <label>
             Pet Name:
             <input
@@ -61,7 +63,9 @@ function New() {
                 onChange={handleChange}
             />
         </label>
+      </div>
 
+      <div>
         <label>
             Pet Type:
             <select
@@ -74,7 +78,9 @@ function New() {
             <option value="cat">Cat</option>
             </select>
         </label>
+      </div>
 
+      <div>
         <label>
             Gender:
             <select
@@ -87,7 +93,9 @@ function New() {
             <option value="female">Female</option>
             </select>
         </label>
+      </div>
 
+      <div>
         <label>
             Breed:
             <input
@@ -97,7 +105,9 @@ function New() {
                 onChange={handleChange}
             />
         </label>
+      </div>
 
+      <div>
         <label>
             Age:
             <select
@@ -128,7 +138,9 @@ function New() {
             <option value="Senior over 16 years">Senior over 16 years</option>
             </select>
         </label>
+      </div>
 
+      <div>
         <label>
             Adoption Status:
             <select
@@ -136,14 +148,16 @@ function New() {
             value={petInput.adoptionStatus}
             onChange={handleChange}
             >
-            <option value=''>Select Adoption Status</option>
-            <option value='Coming Soon'>Coming Soon</option>
-            <option value='Ready to Adopt'>Ready to Adopt</option>
-            <option value='Pending Adoption'>Pending Adoption</option>
-            <option value='Adopted'>Adopted</option>
+              <option value='Select Adoption Status'>Select Adoption Status</option>
+              <option value='Coming Soon'>Coming Soon</option>
+              <option value='Ready to Adopt'>Ready to Adopt</option>
+              <option value='Pending Adoption'>Pending Adoption</option>
+              <option value='Adopted'>Adopted</option>
             </select>
         </label>
+      </div>
 
+      <div>
         <label>
             Introduction:
             <textarea
@@ -152,7 +166,8 @@ function New() {
             onChange={handleChange}
             />
         </label>
-
+      </div>
+      <div>
         <label>
             Details:
             <textarea
@@ -161,8 +176,9 @@ function New() {
             onChange={handleChange}
             />
         </label>
+      </div>
 
-      <button type="submit">Submit</button>
+      <input type="submit"/>
     </form>
   );
 
