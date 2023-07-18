@@ -29,9 +29,15 @@ function Pet() {
 
      const display = pet && (
             <div>
-                <h1>{pet.name}</h1>
-                <p>Has Gluten: {pet.hasGluten.toString()}</p>
                 <img src={pet.image} alt={pet.name} height={300} />
+                <h1>{pet.name}</h1>
+                <p>{pet.type}</p>
+                <p>{pet.gender}</p>
+                <p>{pet.breed}</p>
+                <p>{pet.age}</p>
+                <p>{pet.adoptionStatus}</p>
+                <p>{pet.introduction}</p>
+                <p>{pet.details}</p>
                 <div>
                 <button onClick={() => navigate(`/pet/update/${id}`)}>Edit</button>
                 <button onClick={deletePet}>Delete</button>
