@@ -38,21 +38,25 @@ const response = await fetch(URL, {
         navigate(`/pet/${id}`)
 }
 
+
+// Update Pet Form
+
 const display = petInput && (
   <form onSubmit={handleSubmit}>
-    <select onChange={handleChange} value={petInput.petType} name='Pet Type'>
+    <input onChange={handleChange} value={petInput.image} name='image' placeholder='image' />
+    <input onChange={handleChange} value={petInput.name} name='name' placeholder='name' />
+    <select onChange={handleChange} value={petInput.type} name='type'>
         <option value=''>Select Pet Type</option>
         <option value='dog'>Dog</option>
         <option value='cat'>Cat</option>
       </select>
-      <input required onChange={handleChange} value={petInput.name} name='name' placeholder='name' />
-      <select onChange={handleChange} value={petInput.gender} name='Gender'>
+      <select onChange={handleChange} value={petInput.gender} name='gender'>
         <option value=''>Select Gender</option>
         <option value='male'>Male</option>
         <option value='female'>Female</option>
       </select>
-      <input required onChange={handleChange} value={petInput.breed} breed='Breed' placeholder='Breed' />
-      <select onChange={handleChange} value={petInput.age} name='Age'>
+      <input onChange={handleChange} value={petInput.breed} breed='breed' placeholder='breed' />
+      <select onChange={handleChange} value={petInput.age} name='age'>
         <option value=''>Select Age</option>
         <option value='Puppy 6-8 weeks'>Puppy 6-8 weeks</option>
         <option value='Puppy 10-12 weeks'>Puppy 10-12 weeks</option>
@@ -75,16 +79,15 @@ const display = petInput && (
         <option value='15 years'>15 years</option>
         <option value='Senior over 16 years'>Senior over 16 years</option>
       </select>
-      <select onChange={handleChange} value={petInput.adoptionStatus} name='Adoption Status'>
+      <select onChange={handleChange} value={petInput.adoptionStatus} name='adoptionStatus'>
         <option value=''>Select Adoption Status</option>
         <option value='Coming Soon'>Coming Soon</option>
         <option value='Ready to Adopt'>Ready to Adopt</option>
         <option value='Pending Adoption'>Pending Adoption</option>
         <option value='Adopted'>Adopted</option>
       </select>
-      <input onChange={handleChange} value={petInput.image} name='image' placeholder='image' />
-      <input required onChange={handleChange} value={petInput.introduction} intro='Introduction' placeholder='Introduction' />
-      <input required onChange={handleChange} value={petInput.details} name='Details' placeholder='Details' />
+      <input onChange={handleChange} value={petInput.introduction} introduction='introduction' placeholder='introduction' />
+      <input onChange={handleChange} value={petInput.details} name='details' placeholder='details' />
       <input type='submit' />
   </form>
 );  
