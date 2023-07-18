@@ -28,4 +28,3 @@ STRETCH GOALS:
 - Donation to the shelter page
 - Other locations/shelters
 - Lost and found for pets. Would basically be user version of the admin side for listing cats, dogs, and other misc. pets
-

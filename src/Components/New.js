@@ -1,59 +1,47 @@
-import React, { useState } from "react";
-// eslint-disable-next-line
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+function New() {
+  const navigate = useNavigate()
 
-const New = () => {
-    const [petInput, setPetInput] = useState({
-      image: "",
-      name: "",
-      type: "",
-      gender: "",
-      breed: "",
-      age: "",
-      adoptionStatus: "",
-      introduction: "",
-      details: "",
+  const [petInput, setPetInput] = useState({
+    image: "",
+    name: "",
+    type: "",
+    gender: "",
+    breed: "",
+    age: "",
+    adoptionStatus: "",
+    introduction: "",
+    details: "",
+  });
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setPetInput({
+      ...petInput,
+      [e.target.name]: value
     });
-  
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setPetInput((prevState) => ({
-          ...prevState,
-          [name]: value,
-        }));
-      };
-  
-    // eslint-disable-next-line
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-        const URL = `${process.env.REACT_APP_BACKEND_URI}/pets`;
-        const response = await fetch(URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(petInput),
-        });
-  
-        if (response.status === 201) {
-          console.log("Pet created successfully");
-          // Reset form fields or navigate to a different page
-        } else {
-          console.log("Failed to create pet");
-          // Handle error case
-        }
-      } catch (error) {
-        console.error("Error creating pet:", error);
-        // Handle error case
-      }
-    };
+  }
 
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const URL = `${process.env.REACT_APP_BACKEND_URI}/pets`
+    console.log('pet input', petInput)
+    const response = await fetch(URL, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(petInput)
+    })
+    const data = await response.json()
+    console.log('response', data)
+    navigate('/')
+  }
 
   //Pet Form  
-
   return (
-    <form onChange={handleChange}>
-
+    <form onSubmit={handleSubmit}>
+      <div>
         <label>
             Image URL:
             <input
@@ -63,7 +51,9 @@ const New = () => {
             onChange={handleChange}
             />
         </label>
+      </div>
 
+      <div>
         <label>
             Pet Name:
             <input
@@ -73,7 +63,9 @@ const New = () => {
                 onChange={handleChange}
             />
         </label>
+      </div>
 
+      <div>
         <label>
             Pet Type:
             <select
@@ -86,7 +78,9 @@ const New = () => {
             <option value="cat">Cat</option>
             </select>
         </label>
+      </div>
 
+      <div>
         <label>
             Gender:
             <select
@@ -99,7 +93,9 @@ const New = () => {
             <option value="female">Female</option>
             </select>
         </label>
+      </div>
 
+      <div>
         <label>
             Breed:
             <input
@@ -109,7 +105,9 @@ const New = () => {
                 onChange={handleChange}
             />
         </label>
+      </div>
 
+      <div>
         <label>
             Age:
             <select
@@ -140,7 +138,9 @@ const New = () => {
             <option value="Senior over 16 years">Senior over 16 years</option>
             </select>
         </label>
+      </div>
 
+      <div>
         <label>
             Adoption Status:
             <select
@@ -148,14 +148,16 @@ const New = () => {
             value={petInput.adoptionStatus}
             onChange={handleChange}
             >
-            <option value=''>Select Adoption Status</option>
-            <option value='Coming Soon'>Coming Soon</option>
-            <option value='Ready to Adopt'>Ready to Adopt</option>
-            <option value='Pending Adoption'>Pending Adoption</option>
-            <option value='Adopted'>Adopted</option>
+              <option value='Select Adoption Status'>Select Adoption Status</option>
+              <option value='Coming Soon'>Coming Soon</option>
+              <option value='Ready to Adopt'>Ready to Adopt</option>
+              <option value='Pending Adoption'>Pending Adoption</option>
+              <option value='Adopted'>Adopted</option>
             </select>
         </label>
+      </div>
 
+      <div>
         <label>
             Introduction:
             <textarea
@@ -164,7 +166,8 @@ const New = () => {
             onChange={handleChange}
             />
         </label>
-
+      </div>
+      <div>
         <label>
             Details:
             <textarea
@@ -173,11 +176,24 @@ const New = () => {
             onChange={handleChange}
             />
         </label>
+      </div>
 
-      <button type="submit">Submit</button>
+      <input type="submit"/>
     </form>
   );
-};
 
-export default New;
+  // return (
+  //   <form onSubmit={handleSubmit}>
+  //     <input onChange={handleChange} value={petInput.category} name='category' placeholder='Dog, Cat, Other' />
+  //     <input onChange={handleChange} value={petInput.petName} name='petName' placeholder='Name' />
+  //     <input onChange={handleChange} value={petInput.gender} name='gender' placeholder='Female / Male' />
+  //     <input onChange={handleChange} value={petInput.breed} name='breed' placeholder='Breed Here' />
+  //     <input onChange={handleChange} value={petInput.age} name='age' placeholder='Age' />
+  //     <input onChange={handleChange} value={petInput.image} name='image' placeholder='Image' />
+  //     <input onChange={handleChange} value={petInput.bio} name='bio' placeholder='Bio' />
+  //     <input type='submit' />
+  //   </form>
+  // )
+}
 
+export default New

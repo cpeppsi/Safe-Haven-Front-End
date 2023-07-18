@@ -1,4 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
 import Pet from "./Components/Pet";
@@ -12,7 +14,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/pet/:id" element={<Pet />} />
+          <Route path="/pets/:id" element={<Pet />} />
           <Route path="/pet/update/:id" element={<UpdatePet />} />
           <Route path="/new" element={<New />} />
         </Routes>

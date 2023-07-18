@@ -18,8 +18,8 @@ function Home() {
   const display = pets.map(pet => {
     return (
       <div key={pet._id}>
-        <Link to={`/pet/${pet._id}`}>
-          {pet.name}
+        <Link to={`/pets/${pet._id}`}>
+          <p>{pet.petName}</p>
         </Link>
       </div>
     )
