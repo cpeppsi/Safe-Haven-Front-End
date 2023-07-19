@@ -5,15 +5,15 @@ function New() {
   const navigate = useNavigate()
 
   const [petInput, setPetInput] = useState({
-    image: "",
-    name: "",
-    type: "",
+    petType: "",
+    petName: "",
+    isAdopted: "",
     gender: "",
     breed: "",
+    color: "",
     age: "",
-    adoptionStatus: "",
-    introduction: "",
-    details: "",
+    image: "",
+    bio: "",
   });
 
   const handleChange = (e) => {
@@ -58,8 +58,8 @@ function New() {
             Pet Name:
             <input
                 type="text"
-                name="name"
-                value={petInput.name}
+                name="petName"
+                value={petInput.petName}
                 onChange={handleChange}
             />
         </label>
@@ -69,8 +69,8 @@ function New() {
         <label>
             Pet Type:
             <select
-            name="type"
-            value={petInput.type}
+            name="petType"
+            value={petInput.petType}
             onChange={handleChange}
             >
             <option value="">Select Pet Type</option>
@@ -144,7 +144,7 @@ function New() {
         <label>
             Adoption Status:
             <select
-            name="Adoption Status"
+            name="adoptionStatus"
             value={petInput.adoptionStatus}
             onChange={handleChange}
             >
@@ -159,25 +159,14 @@ function New() {
 
       <div>
         <label>
-            Introduction:
+            Bio:
             <textarea
-            name="introduction"
-            value={petInput.introduction}
+            name="bio"
+            value={petInput.bio}
             onChange={handleChange}
             />
         </label>
       </div>
-      <div>
-        <label>
-            Details:
-            <textarea
-            name="details"
-            value={petInput.details}
-            onChange={handleChange}
-            />
-        </label>
-      </div>
-
       <input type="submit"/>
     </form>
   );

@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Card from 'react-bootstrap/Card'
+
 
 function Home() {
   const [pets, setPets] = useState([])
@@ -17,21 +19,22 @@ function Home() {
 
   const display = pets.map(pet => {
     return (
-      <div key={pet._id}>
-        <Link to={`/pets/${pet._id}`}>
-          <p>{pet.petName}</p>
-        </Link>
-      </div>
+        <Card style={{ display: 'inline-block'}} key={pet._id}>
+          <img src='/images/pets-placeholder2.png' alt="pet placeholder" />
+          <Link to={`/pets/${pet._id}`}>
+            <h4 style={{textAlign:'center'}}>{pet.petName}</h4>
+          </Link>
+        </Card>
     )
   })
 
   return (
-    <div>
-      <img src="/images/pets.jpg" alt="Dog & Cat Cuddles" />
-      <div>
+    <div className='container-lg'>
+      <h1 className='text-center'>Safe Haven Pet Adoption</h1>
+      <img src="/images/pets.jpg" alt="Dog & Cat Cuddles" className='rounded img-fluid d-block mx-auto mt-4'/>
+      <div className='text-center p-4'>
         Photo by <a href="https://unsplash.com/photos/9gz3wfHr65U">Krista Mangulsone</a> on <a href="https://unsplash.com/s/photos/dogs-and-cats?license=free">Unsplash</a>
       </div>
-      <h1>Pet Adoption Safe Haven</h1>
       {display}
     </div>
   );
