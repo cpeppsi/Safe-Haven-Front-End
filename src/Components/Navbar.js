@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
+import Navlink from'react-bootstrap/Navlink'
 
-function Navbar() {
+function NavigationBar() {
   return (
-    <div>
+    <Navbar className='bg-body-tertiary'>
       <Link to='/'>Home</Link>
       |
       <Link to='/new'>New</Link>
-    </div>
+    </Navbar>
   )
 }
 
-export default Navbar
+export default NavigationBar

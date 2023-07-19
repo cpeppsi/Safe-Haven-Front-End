@@ -35,7 +35,7 @@ const response = await fetch(URL, {
     body: JSON.stringify(petInput)
 })
     if (response.status !== 204) console.log('error!') // add error handling later
-        navigate(`/pet/${id}`)
+        navigate(`/pets/${id}`)
 }
 
 
@@ -44,8 +44,8 @@ const response = await fetch(URL, {
 const display = petInput && (
   <form onSubmit={handleSubmit}>
     <input onChange={handleChange} value={petInput.image} name='image' placeholder='image' />
-    <input onChange={handleChange} value={petInput.name} name='name' placeholder='name' />
-    <select onChange={handleChange} value={petInput.type} name='type'>
+    <input onChange={handleChange} value={petInput.petName} name='petName' placeholder='name' />
+    <select onChange={handleChange} value={petInput.petType} name='petType'>
         <option value=''>Select Pet Type</option>
         <option value='dog'>Dog</option>
         <option value='cat'>Cat</option>
@@ -55,7 +55,7 @@ const display = petInput && (
         <option value='male'>Male</option>
         <option value='female'>Female</option>
       </select>
-      <input onChange={handleChange} value={petInput.breed} breed='breed' placeholder='breed' />
+      <input onChange={handleChange} value={petInput.breed} name='breed' placeholder='breed' />
       <select onChange={handleChange} value={petInput.age} name='age'>
         <option value=''>Select Age</option>
         <option value='Puppy 6-8 weeks'>Puppy 6-8 weeks</option>
@@ -86,8 +86,7 @@ const display = petInput && (
         <option value='Pending Adoption'>Pending Adoption</option>
         <option value='Adopted'>Adopted</option>
       </select>
-      <input onChange={handleChange} value={petInput.introduction} introduction='introduction' placeholder='introduction' />
-      <input onChange={handleChange} value={petInput.details} name='details' placeholder='details' />
+      <input onChange={handleChange} value={petInput.bio} name='bio' placeholder='bio' />
       <input type='submit' />
   </form>
 );  

@@ -24,20 +24,19 @@ function Pet() {
     const response = await fetch(URL, {
         method: 'DELETE'
     })
-    if (response.status !==204) console.log('error') // add error handling later    
+    if (response.status !==204) console.log('error') // add error handling later   
   }
 
   const display = pet && (
     <div>
-      <img src={pet.image} alt={pet.name} height={300} />
-      <h1>{pet.name}</h1>
-      <p>{pet.type}</p>
+      <img src={pet.image} alt={pet.petName} height={300} />
+      <h1>{pet.petName}</h1>
+      <p>{pet.petType}</p>
       <p>{pet.gender}</p>
       <p>{pet.breed}</p>
       <p>{pet.age}</p>
       <p>{pet.adoptionStatus}</p>
-      <p>{pet.introduction}</p>
-      <p>{pet.details}</p>
+      <p>{pet.bio}</p>
       <div>
         <button onClick={() => navigate(`/pet/update/${id}`)}>Edit</button>
         <button onClick={deletePet}>Delete</button>
