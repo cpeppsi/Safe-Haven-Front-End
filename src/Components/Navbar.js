@@ -4,14 +4,24 @@ import Container from "react-bootstrap/Container";
 
 function NavigationBar() {
   return (
-    <Navbar style={{display:'inline-block'}} data-bs-theme="light">
-      <Container>
-        <Navbar.Brand href='/'>Safe-Haven</Navbar.Brand>
-        <Nav.Link href='/'>Home</Nav.Link>
-        |
-        <Nav.Link href='/new'>New</Nav.Link>
-      </Container>
-    </Navbar>
+    <div>
+      <h1 className='text-center mb-0 ' 
+      style={{
+          fontWeight: '700', 
+          backgroundColor: '#B5EB8D', 
+          padding:'12px', 
+          color:'darkgreen',
+          backgroundImage: 'repeating-linear-gradient(30deg, #ffffff 0, #ffffff 1px, #a7e57b 0, #a7e57b 2%)',
+          textShadow: '2px 2px white'
+          }}>Safe Haven Pet Adoption</h1>
+      <Navbar className="font-nice" style={{backgroundColor:"#217605", color:"#E9FFD8"}}>
+        {/*<Container style={{display:'inline-block'}}>*/}
+          <Nav.Link href='/' className='me-3 ms-3' style={{color:"#E9FFD8"}}>Home</Nav.Link>
+            |
+          <Nav.Link href='/new' className='me-3 ms-3' style={{color:"#E9FFD8"}}>New Pet</Nav.Link>
+        {/*</Container>*/}
+      </Navbar>
+    </div>
   )
 }
 

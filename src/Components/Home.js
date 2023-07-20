@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Card from 'react-bootstrap/Card'
+import NavigationBar from './Navbar'
 
 
 function Home() {
@@ -19,23 +20,56 @@ function Home() {
 
   const display = pets.map(pet => {
     return (
-        <Card style={{ display: 'inline-block'}} key={pet._id}>
-          <img src={pet.image} alt="pet placeholder" />
-          <Link to={`/pets/${pet._id}`}>
-            <h4 style={{textAlign:'center'}}>{pet.petName}</h4>
+        <Card style={{ 
+          display: 'inline-block', 
+          border:'2px solid #217605', 
+          margin: '5px', 
+          backgroundColor:"#217605"
+          }} key={pet._id}>
+          <img src={pet.petImage} alt="Pet picture" />
+          <Link to={`/pets/${pet._id}`} style={{color:'#B5EB8D'}}>
+            <h5 style={{textAlign:'center', marginTop: '8px', color:'#B5EB8D'}}>{pet.petName}</h5>
           </Link>
         </Card>
     )
   })
 
   return (
-    <div className='container-lg'>
-      <h1 className='text-center'>Safe Haven Pet Adoption</h1>
-      <img src="/images/pets.jpg" alt="Dog & Cat Cuddles" className='rounded img-fluid d-block mx-auto mt-4'/>
-      <div className='text-center p-4'>
-        Photo by <a href="https://unsplash.com/photos/9gz3wfHr65U">Krista Mangulsone</a> on <a href="https://unsplash.com/s/photos/dogs-and-cats?license=free">Unsplash</a>
+    <div className='container-lg font-nice'>
+      {<NavigationBar/>}
+      <div  style={{position:'relative'}}>
+        <img
+          src="https://images.unsplash.com/photo-1450778869180-41d0601e046e"
+          alt="Dog & Cat Cuddles"
+          className="object-fit-cover img-fluid m0"
+        />
+        <div className='p-2' style={{
+          position:'absolute', 
+          bottom:'0px', 
+          zIndex:'1', 
+          marginLeft: 'auto', 
+          marginRight:'auto', 
+          width:'100%', 
+          textAlign: 'center', 
+          color:'black', 
+          backgroundColor:'rgb(255,255,255, 0.5)'}}>
+          Photo by <a href="https://unsplash.com/photos/9gz3wfHr65U">Krista Mangulsone</a> on <a href="https://unsplash.com/s/photos/dogs-and-cats?license=free">Unsplash</a>
+        </div>
       </div>
-      {display}
+      <div style={{
+        width:'100%',
+        margin:'auto', 
+        textAlign:'center', 
+        backgroundColor:'#B5EB8D',
+        backgroundImage: 'repeating-linear-gradient(30deg, #ffffff 0, #ffffff 1px, #a7e57b 0, #a7e57b 2%)'
+        }}>
+        <h2 style={{
+            paddingTop:'12px', 
+            color: 'darkgreen', 
+            fontWeight: '700'
+          }}>Our Pets</h2>
+        {display}
+      </div>
     </div>
   );
 }

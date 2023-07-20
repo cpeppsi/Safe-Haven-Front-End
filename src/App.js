@@ -11,7 +11,6 @@ function App() {
   return (
     <div>
       <Router>
-        <NavigationBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pets/:id" element={<Pet />} />

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import NavigationBar from './Navbar';
 
 function Pet() {
   const [pet, setPet] = useState({})
@@ -29,15 +30,16 @@ function Pet() {
   }
 
   const display = pet && (
-    <div>
-      <img src={pet.image} alt={pet.petName} height={300} />
+    <div className = "font-nice container-lg">
+      {<NavigationBar/>}
+      <img src={pet.petImage} alt="Pet" height={300} />
       <h1>{pet.petName}</h1>
-      <p>{pet.petType}</p>
-      <p>{pet.gender}</p>
-      <p>{pet.breed}</p>
-      <p>{pet.age}</p>
-      <p>{pet.adoptionStatus}</p>
-      <p>{pet.bio}</p>
+      <p>Species: {pet.petType}</p>
+      <p>Sex: {pet.petGender}</p>
+      <p>Breed: {pet.petBreed}</p>
+      <p>Age: {pet.petAge}</p>
+      <p>Adoption Status: {pet.petAdoptionStatus}</p>
+      <p>Bio: {pet.petBio}</p>
       <div>
         <button onClick={() => navigate(`/pet/update/${id}`)}>Edit</button>
         <button onClick={deletePet}>Delete</button>
