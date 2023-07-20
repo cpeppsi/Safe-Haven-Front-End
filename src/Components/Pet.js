@@ -24,6 +24,7 @@ function Pet() {
     const response = await fetch(URL, {
         method: 'DELETE'
     })
+    navigate('/');
     if (response.status !==204) console.log('error') // add error handling later   
   }
 

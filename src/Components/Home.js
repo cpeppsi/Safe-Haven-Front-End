@@ -20,7 +20,7 @@ function Home() {
   const display = pets.map(pet => {
     return (
         <Card style={{ display: 'inline-block'}} key={pet._id}>
-          <img src='/images/pets-placeholder2.png' alt="pet placeholder" />
+          <img src={pet.image} alt="pet placeholder" />
           <Link to={`/pets/${pet._id}`}>
             <h4 style={{textAlign:'center'}}>{pet.petName}</h4>
           </Link>
