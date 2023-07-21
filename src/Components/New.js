@@ -61,7 +61,7 @@ function New() {
             <Form.Label>
                 Please input the animal's name:<span style={{color:'red'}}>*</span> 
             </Form.Label>
-            <Form.Control type="text" name="petName" placeholder="Animal name" value={petInput.petName} onChange={handleChange} required style={{textAlign:'center'}}/>
+            <Form.Control type="text" name="petName" placeholder="Animal name" value={petInput.petName} maxLength={15} onChange={handleChange} required style={{textAlign:'center'}}/>
           </Form.Group>
 
           <Form.Group as={Col} style={{textAlign:'center'}}>
@@ -92,7 +92,7 @@ function New() {
             <Form.Label>
               Please input the animal's breed:
             </Form.Label>
-            <Form.Control type="text" name="petBreed" placeholder="Animal breed" value={petInput.petBreed} onChange={handleChange} style={{textAlign:'center'}}/>
+            <Form.Control type="text" name="petBreed" placeholder="Animal breed" maxLength={15} value={petInput.petBreed} onChange={handleChange} style={{textAlign:'center'}}/>
           </Form.Group>
 
           <Form.Group as={Col} style={{textAlign:'center'}}>
@@ -143,7 +143,7 @@ function New() {
             <Form.Label>
                 Please briefly describe the animal's bio: 
             </Form.Label>
-            <Form.Control as='textarea' name="petBio" placeholder="Animal bio" value={petInput.petBio} onChange={handleChange} style={{textAlign:'center'}}/>
+            <Form.Control as='textarea' name="petBio" placeholder="Animal bio" maxLength={80} value={petInput.petBio} onChange={handleChange} style={{textAlign:'center'}}/>
           </Form.Group>
         </Row>
         <Form.Group className='mb-3 mx-auto w-50' style={{textAlign: 'center'}}>

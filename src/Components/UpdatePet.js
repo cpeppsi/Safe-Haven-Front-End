@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import NavigationBar from './Navbar';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 function UpdatePet() {
     const navigate = useNavigate()
@@ -48,42 +50,57 @@ const display = petInput && (
   <div className = "container-lg font-nice">
     {<NavigationBar/>}
     <Form className='p-3' onSubmit={handleSubmit} style={{backgroundColor:'#B5EB8D', color:"#217605"}}>
-      <div>
-        <label>
-          Animal image URL: <input onChange={handleChange} value={petInput.petImage} name='petImage' placeholder='Animal image URL' />
-        </label>
-      </div>
-      <div>
-        <label>
-          Animal's name: <input onChange={handleChange} value={petInput.petName} name='petName' required placeholder='Animal name' />
-        </label>
-      </div>
-      <div>
-        <label>
-          Animal's species: <select onChange={handleChange} value={petInput.petType} name='petType' required>
-            <option value=''>Select Pet Type</option>
-            <option value='Dog'>Dog</option>
-            <option value='Cat'>Cat</option>
-          </select>
-        </label>
-      </div>
-      <div>
-        <label>
-          Animal's gender: <select onChange={handleChange} value={petInput.petGender} name='petGender' required>
-            <option value=''>Select Gender</option>
-            <option value='Male'>Male</option>
-            <option value='Female'>Female</option>
-          </select>
-        </label>
-      </div>
-      <div>
-        <label>
-          Animal's breed: <input onChange={handleChange} value={petInput.petBreed} name='petBreed' placeholder='Animal breed' />
-        </label>
-      </div>
-      <div>
-        <label>
-          Animal's age: <select onChange={handleChange} value={petInput.petAge} name='petAge' required>
+      <Row className='mb-3'>
+        <Form.Group as={Col} style={{textAlign:'center'}}>
+            <Form.Label>
+              Animal image URL: 
+            </Form.Label>
+            <Form.Control type='text' onChange={handleChange} value={petInput.petImage} name='petImage' placeholder='Animal image URL' style={{textAlign:'center'}}/>
+        </Form.Group>
+
+        <Form.Group as={Col} style={{textAlign:'center'}}>
+            <Form.Label>
+              Animal's name: 
+            </Form.Label>
+            <Form.Control type='text' onChange={handleChange} value={petInput.petName} name='petName' required placeholder='Animal name' style={{textAlign:'center'}}/>
+        </Form.Group>
+
+        <Form.Group as={Col} style={{textAlign:'center'}}>
+            <Form.Label>
+              Animal's species: 
+            </Form.Label>
+            <Form.Select onChange={handleChange} value={petInput.petName} name='petName' required placeholder='Animal name' style={{textAlign:'center'}}>
+              <option value=''>Select Pet Type</option>
+              <option value='Dog'>Dog</option>
+              <option value='Cat'>Cat</option>
+            </Form.Select>
+        </Form.Group>
+      </Row>
+
+      <Row className='mb-3'>
+        <Form.Group as={Col} style={{textAlign:'center'}}>
+          <Form.Label>
+            Animal's gender:
+          </Form.Label>
+          <Form.Select onChange={handleChange} value={petInput.petGender} name='petGender' required style={{textAlign:'center'}}>
+              <option value=''>Select Gender</option>
+              <option value='Male'>Male</option>
+              <option value='Female'>Female</option>
+          </Form.Select>
+        </Form.Group>
+
+        <Form.Group as={Col} style={{textAlign:'center'}}>
+          <Form.Label>
+            Animal's breed: 
+          </Form.Label>
+          <Form.Control type='text' onChange={handleChange} value={petInput.petBreed} name='petBreed' placeholder='Animal breed' style={{textAlign:'center'}}/>
+        </Form.Group>
+
+        <Form.Group as={Col} style={{textAlign:'center'}}>
+          <Form.Label>
+            Animal's age:
+          </Form.Label>
+          <Form.Select onChange={handleChange} value={petInput.petAge} name='petAge' required style={{textAlign:'center'}}>
             <option value=''>Select Age</option>
             <option value='Puppy 6-8 weeks'>Puppy 6-8 weeks</option>
             <option value='Puppy 10-12 weeks'>Puppy 10-12 weeks</option>
@@ -105,25 +122,31 @@ const display = petInput && (
             <option value='14 years'>14 years</option>
             <option value='15 years'>15 years</option>
             <option value='Senior over 16 years'>Senior over 16 years</option>
-          </select>
-        </label>
-      </div>
-      <div>
-        <label>
-            Animal's adoption status: <select onChange={handleChange} value={petInput.petAdoptionStatus} name='petAdoptionStatus' required>
-              <option value=''>Select Adoption Status</option>
-              <option value='Coming Soon'>Coming Soon</option>
-              <option value='Ready to Adopt'>Ready to Adopt</option>
-              <option value='Pending Adoption'>Pending Adoption</option>
-              <option value='Adopted'>Adopted</option>
-          </select>
-        </label>
-      </div>
-      <div>
-        <label>
-          Animal's bio: <textarea onChange={handleChange} value={petInput.petBio} name='petBio' placeholder='Animal bio' />
-        </label>
-      </div>
+          </Form.Select>
+        </Form.Group>
+      </Row>
+
+      <Row className='mb-3'>
+        <Form.Group as={Col} style={{textAlign:'center'}}>
+          <Form.Label>
+            Animal's adoption status:
+          </Form.Label> 
+          <Form.Select onChange={handleChange} value={petInput.petAdoptionStatus} name='petAdoptionStatus' required style={{textAlign:'center'}}>
+            <option value=''>Select Adoption Status</option>
+            <option value='Coming Soon'>Coming Soon</option>
+            <option value='Ready to Adopt'>Ready to Adopt</option>
+            <option value='Pending Adoption'>Pending Adoption</option>
+            <option value='Adopted'>Adopted</option>
+          </Form.Select>
+        </Form.Group>
+
+        <Form.Group as={Col} style={{textAlign:'center'}}>
+          <Form.Label>
+            Animal's bio: 
+          </Form.Label>
+          <Form.Control as='textarea' onChange={handleChange} value={petInput.petBio} name='petBio' placeholder='Animal bio' style={{textAlign:'center'}}/>
+        </Form.Group>
+      </Row>
       <div>
         <label>
           <input type='submit' />

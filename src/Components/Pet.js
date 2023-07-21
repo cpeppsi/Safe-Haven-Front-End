@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import NavigationBar from './Navbar';
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 function Pet() {
   const [pet, setPet] = useState({})
@@ -41,19 +42,22 @@ function Pet() {
             backgroundColor:"#217605",
             textAlign:'center', 
             marginTop: '8px', 
-            color:'#B5EB8D'
-            }}>
-          <img src={pet.petImage} alt="Pet" height={300} />
-          <h1>{pet.petName}</h1>
-          <p>Species: {pet.petType}</p>
-          <p>Sex: {pet.petGender}</p>
-          <p>Breed: {pet.petBreed}</p>
-          <p>Age: {pet.petAge}</p>
-          <p>Adoption Status: {pet.petAdoptionStatus}</p>
-          <p>Bio: {pet.petBio}</p>
-          <div>
-            <button onClick={() => navigate(`/pet/update/${id}`)}>Edit</button>
-            <button onClick={deletePet}>Delete</button>
+            color:'#B5EB8D',
+            maxWidth: '35em'
+          }}>
+          <div className='card-body'>
+            <img className='rounded' src={pet.petImage} alt="Pet" height={300} />
+            <h1 className="p-2">{pet.petName}</h1>
+            <p className="card-text">Species: {pet.petType}</p>
+            <p className="card-text">Sex: {pet.petGender}</p>
+            <p className="card-text">Breed: {pet.petBreed}</p>
+            <p className="card-text">Age: {pet.petAge}</p>
+            <p className="card-text">Adoption Status: {pet.petAdoptionStatus}</p>
+            <p className="card-text">Bio: {pet.petBio}</p>
+            <div>
+              <Button variant='warning' onClick={() => navigate(`/pet/update/${id}`)}>Edit</Button>
+              <Button variant='danger' onClick={deletePet}>Delete</Button>
+            </div>
           </div>
         </Card>
       </div>

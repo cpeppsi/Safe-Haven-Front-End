@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Card from 'react-bootstrap/Card'
-import NavigationBar from './Navbar'
+import Card from 'react-bootstrap/Card';
+import NavigationBar from './Navbar';
 
 
 function Home() {
@@ -26,7 +26,7 @@ function Home() {
           margin: '5px', 
           backgroundColor:"#217605"
           }} key={pet._id}>
-          <img src={pet.petImage} alt="Pet picture" />
+          <img src={pet.petImage} alt="Pet"/>
           <Link to={`/pets/${pet._id}`} style={{color:'#B5EB8D'}}>
             <h5 style={{textAlign:'center', marginTop: '8px', color:'#B5EB8D'}}>{pet.petName}</h5>
           </Link>
