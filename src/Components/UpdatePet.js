@@ -47,7 +47,7 @@ const response = await fetch(URL, {
 const display = petInput && (
   <div className = "container-lg font-nice">
     {<NavigationBar/>}
-    <form name='editPet' onSubmit={handleSubmit}>
+    <Form className='p-3' onSubmit={handleSubmit} style={{backgroundColor:'#B5EB8D', color:"#217605"}}>
       <div>
         <label>
           Animal image URL: <input onChange={handleChange} value={petInput.petImage} name='petImage' placeholder='Animal image URL' />
@@ -129,7 +129,7 @@ const display = petInput && (
           <input type='submit' />
         </label>
       </div>
-    </form>
+    </Form>
   </div>
 );  
 
