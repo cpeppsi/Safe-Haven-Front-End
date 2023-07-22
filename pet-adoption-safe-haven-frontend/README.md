@@ -9,28 +9,40 @@
 Clone from the repo and install npm will install require dependecies:
 ```npm install```
 
-### To run the backend
+### To run the frontend 
 ---
 * Note Node.js must be installed for application to run [Node JS](https://nodejs.org/en/download/)
 
 From the root directory run:
-``` npm run dev ```
+``` npm start ```
 
 This will execute the script and output the following: 
 ```
-> Pet-Adoption-Safe-Haven@1.0.0 dev
-> npx nodemon index.js
+Compiled successfully!
 
-[nodemon] 3.0.1
-[nodemon] to restart at any time, enter `rs`  
-[nodemon] watching path(s): *.*
-[nodemon] watching extensions: js,mjs,cjs,json
-[nodemon] starting `node index.js`
-listening on port 8080
-DB connected
+You can now view bread-frontend in the browser.  
+
+  Local:            http://localhost:3000        
+  On Your Network:  http://192.168.1.12:3000     
+
+Note that the development build is not optimized.
+To create a production build, use npm run build. 
+
+webpack compiled successfully
   ```
 
-### Link to the frontend
+### Link to the backend
 ---
-Open the front end GitHub repository using the following link:
-https://github.com/cpeppsi/Safe-Haven-Front-End.git
+Open the backend GitHub repository using the following link:
+https://github.com/cpeppsi/Pet-Adoption-Safe-Haven.git
+
+### Project Design Goals:
+---
+* Create the Safe Haven Home/landing page where a user may choose to browse available Pets to adopt
+* Create the CREATE new pet page to add a new dog or cat that's available to adopt
+* Create a READ page for EACH dog and cat that's available to adopt
+* Create UPDATE function to update existing adoption listings and adoptee status
+* Create DELETE function to remove cats and dogs that have been adopted or added in error 
+* Create an About Pet Adoption Safe Haven page
+* Style pages to have consistent format that is visually appealing
+* Application Deployment
