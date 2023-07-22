@@ -4,13 +4,15 @@
 
 ### This is a fullstack MERN application which allows user of "Safe Haven Shelter" to CREATE new adoption listings for both cats and dogs, READ the adoption listings, UPDATE the adoption listings, and DELETE them. It also allows users to explore the website with a navbar and view an About page with Safe Haven Shelter's Mission.
 
-### To install
 ---
+### To install:
+
 Clone from the repo and install npm will install require dependecies:
 ```npm install```
 
-### To run the frontend 
 ---
+### To run the frontend: 
+
 * Note Node.js must be installed for application to run [Node JS](https://nodejs.org/en/download/)
 
 From the root directory run:
@@ -31,13 +33,15 @@ To create a production build, use npm run build.
 webpack compiled successfully
   ```
 
-### Link to the backend
 ---
+### Link to the backend:
+
 Open the backend GitHub repository using the following link:
 https://github.com/cpeppsi/Pet-Adoption-Safe-Haven.git
 
-### Project Design Goals:
 ---
+### Project Design Goals:
+
 * Create the Safe Haven Home/landing page where a user may choose to browse available Pets to adopt
 * Create the CREATE new pet page to add a new dog or cat that's available to adopt
 * Create a READ page for EACH dog and cat that's available to adopt
