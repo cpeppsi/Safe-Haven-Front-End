@@ -26,10 +26,10 @@ fetchData()
 
 const handleChange = (e) => {
     const value = e.target.value;
-        setPetInput({
-        ...petInput,
-        [e.target.name]: value
-    });
+      setPetInput({
+      ...petInput,
+      [e.target.name]: value
+      });
 }
 
 const handleSubmit = async (e) => {
@@ -52,35 +52,35 @@ const display = petInput && (
     <Form className='p-3' onSubmit={handleSubmit} style={{backgroundColor:'#B5EB8D', color:"#217605"}}>
       <Row className='mb-3'>
         <Form.Group as={Col} style={{textAlign:'center'}}>
-            <Form.Label>
-              Animal image URL: 
-            </Form.Label>
-            <Form.Control type='text' onChange={handleChange} value={petInput.petImage} name='petImage' placeholder='Animal image URL' style={{textAlign:'center'}}/>
+          <Form.Label>
+            Animal image URL: 
+          </Form.Label>
+          <Form.Control type='text' onChange={handleChange} value={petInput.petImage} name='petImage' placeholder='Animal image URL' required style={{textAlign:'center'}}/>
         </Form.Group>
 
         <Form.Group as={Col} style={{textAlign:'center'}}>
-            <Form.Label>
-              Animal's name: 
-            </Form.Label>
-            <Form.Control type='text' onChange={handleChange} value={petInput.petName} name='petName' required placeholder='Animal name' style={{textAlign:'center'}}/>
+          <Form.Label>
+            Animal's name:
+          </Form.Label>
+          <Form.Control type='text' onChange={handleChange} value={petInput.petName} name='petName' required placeholder='Animal name' style={{textAlign:'center'}}/>
         </Form.Group>
 
         <Form.Group as={Col} style={{textAlign:'center'}}>
-            <Form.Label>
-              Animal's species: 
-            </Form.Label>
-            <Form.Select onChange={handleChange} value={petInput.petName} name='petName' required placeholder='Animal name' style={{textAlign:'center'}}>
-              <option value=''>Select Pet Type</option>
-              <option value='Dog'>Dog</option>
-              <option value='Cat'>Cat</option>
-            </Form.Select>
+          <Form.Label>
+            Animal's species:
+          </Form.Label>
+          <Form.Select onChange={handleChange} value={petInput.petType} name='petType' required placeholder='Animal species' style={{textAlign:'center'}}>
+            <option value=''>Select Pet Type</option>
+            <option value='Dog'>Dog</option>
+            <option value='Cat'>Cat</option>
+          </Form.Select>
         </Form.Group>
       </Row>
 
       <Row className='mb-3'>
         <Form.Group as={Col} style={{textAlign:'center'}}>
           <Form.Label>
-            Animal's gender:
+            Animal's sex:
           </Form.Label>
           <Form.Select onChange={handleChange} value={petInput.petGender} name='petGender' required style={{textAlign:'center'}}>
               <option value=''>Select Gender</option>
@@ -93,7 +93,7 @@ const display = petInput && (
           <Form.Label>
             Animal's breed: 
           </Form.Label>
-          <Form.Control type='text' onChange={handleChange} value={petInput.petBreed} name='petBreed' placeholder='Animal breed' style={{textAlign:'center'}}/>
+          <Form.Control type='text' onChange={handleChange} value={petInput.petBreed} name='petBreed' placeholder='Animal breed' required style={{textAlign:'center'}}/>
         </Form.Group>
 
         <Form.Group as={Col} style={{textAlign:'center'}}>
@@ -144,14 +144,13 @@ const display = petInput && (
           <Form.Label>
             Animal's bio: 
           </Form.Label>
-          <Form.Control as='textarea' onChange={handleChange} value={petInput.petBio} name='petBio' placeholder='Animal bio' style={{textAlign:'center'}}/>
+          <Form.Control as='textarea' onChange={handleChange} value={petInput.petBio} name='petBio' placeholder='Animal bio' required style={{textAlign:'center'}}/>
         </Form.Group>
       </Row>
-      <div>
-        <label>
-          <input type='submit' />
-        </label>
-      </div>
+      <Form.Group className='mb-3 mx-auto w-50' style={{textAlign: 'center'}}>
+        <p>All fields are required.</p>
+        <Button type='submit' variant='success'>Submit</Button>
+      </Form.Group>
     </Form>
   </div>
 );  

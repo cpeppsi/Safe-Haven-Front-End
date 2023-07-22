@@ -24,11 +24,11 @@ function Home() {
           display: 'inline-block', 
           border:'2px solid #217605', 
           margin: '5px', 
-          backgroundColor:"#217605"
+          backgroundColor:"#217605",
           }} key={pet._id}>
           <img src={pet.petImage} alt="Pet"/>
           <Link to={`/pets/${pet._id}`} style={{color:'#B5EB8D'}}>
-            <h5 style={{textAlign:'center', marginTop: '8px', color:'#B5EB8D'}}>{pet.petName}</h5>
+            <h5 style={{textAlign:'center', marginTop: '8px', color:'white'}}>{pet.petName}</h5>
           </Link>
         </Card>
     )

@@ -6,6 +6,7 @@ import Home from "./Components/Home";
 import Pet from "./Components/Pet";
 import New from "./Components/New";
 import UpdatePet from "./Components/UpdatePet";
+import About from "./Components/About";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/pets/:id" element={<Pet />} />
           <Route path="/pet/update/:id" element={<UpdatePet />} />
           <Route path="/new" element={<New />} />
+          <Route path="/about" element={<About/>}/>
         </Routes>
       </Router>
     </div>

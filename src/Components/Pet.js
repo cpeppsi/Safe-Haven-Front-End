@@ -28,7 +28,7 @@ function Pet() {
         method: 'DELETE'
     })
     navigate('/');
-    if (response.status !==204) console.log('error') // add error handling later   
+    if (response.status !==204) console.log('error')   
   }
 
   const display = pet && (
@@ -42,7 +42,7 @@ function Pet() {
             backgroundColor:"#217605",
             textAlign:'center', 
             marginTop: '8px', 
-            color:'#B5EB8D',
+            color:'white',
             maxWidth: '35em'
           }}>
           <div className='card-body'>

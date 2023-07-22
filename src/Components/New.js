@@ -59,14 +59,14 @@ function New() {
 
           <Form.Group as={Col} style={{textAlign:'center'}}>
             <Form.Label>
-                Please input the animal's name:<span style={{color:'red'}}>*</span> 
+                Please input the animal's name:
             </Form.Label>
             <Form.Control type="text" name="petName" placeholder="Animal name" value={petInput.petName} maxLength={15} onChange={handleChange} required style={{textAlign:'center'}}/>
           </Form.Group>
 
           <Form.Group as={Col} style={{textAlign:'center'}}>
             <Form.Label>
-              Please select the animal's species:<span style={{color:'red'}}>*</span>  
+              Please select the animal's species:
             </Form.Label>
             <Form.Select name="petType" value={petInput.petType} onChange={handleChange} required style={{textAlign:'center'}}> 
                 <option value="">Select Pet Type</option>
@@ -79,7 +79,7 @@ function New() {
         <Row className='mb-3'>
           <Form.Group as={Col} style={{textAlign:'center'}}>
             <Form.Label>
-              Please select the animal's sex:<span style={{color:'red'}}>*</span>  
+              Please select the animal's sex:
             </Form.Label>
             <Form.Select name="petGender" value={petInput.petGender} onChange={handleChange} required style={{textAlign:'center'}}>
                 <option value="">Select Gender</option>
@@ -92,43 +92,43 @@ function New() {
             <Form.Label>
               Please input the animal's breed:
             </Form.Label>
-            <Form.Control type="text" name="petBreed" placeholder="Animal breed" maxLength={15} value={petInput.petBreed} onChange={handleChange} style={{textAlign:'center'}}/>
+            <Form.Control type="text" name="petBreed" placeholder="Animal breed" maxLength={15} value={petInput.petBreed} onChange={handleChange} required style={{textAlign:'center'}}/>
           </Form.Group>
 
           <Form.Group as={Col} style={{textAlign:'center'}}>
             <Form.Label>
-                Please select the animal's age<span style={{color:'red'}}>*</span> : 
+                Please select the animal's age: 
             </Form.Label>
             <Form.Select name="petAge" value={petInput.petAge} onChange={handleChange} required style={{textAlign:'center'}}>
-                <option value="">Select Age</option>
-                <option value="6-8 weeks">6-8 weeks</option>
-                <option value="10-12 weeks">10-12 weeks</option>
-                <option value="16-18 weeks">16-18 weeks</option>
-                <option value="Under a year">under a year</option>
-                <option value="1 year">1 year</option>
-                <option value="2 years">2 years</option>
-                <option value="3 years">3 years</option>
-                <option value="4 years">4 years</option>
-                <option value="5 years">5 years</option>
-                <option value="6 years">6 years</option>
-                <option value="7 years">7 years</option>
-                <option value="8 years">8 years</option>
-                <option value="9 years">9 years</option>
-                <option value="10 years">10 years</option>
-                <option value="11 years">11 years</option>
-                <option value="12 years">12 years</option>
-                <option value="13 years">13 years</option>
-                <option value="14 years">14 years</option>
-                <option value="15 years">15 years</option>
-                <option value="Senior over 16 years">Senior over 16 years</option>
-                </Form.Select>
+              <option value="">Select Age</option>
+              <option value="6-8 weeks">6-8 weeks</option>
+              <option value="10-12 weeks">10-12 weeks</option>
+              <option value="16-18 weeks">16-18 weeks</option>
+              <option value="Under a year">under a year</option>
+              <option value="1 year">1 year</option>
+              <option value="2 years">2 years</option>
+              <option value="3 years">3 years</option>
+              <option value="4 years">4 years</option>
+              <option value="5 years">5 years</option>
+              <option value="6 years">6 years</option>
+              <option value="7 years">7 years</option>
+              <option value="8 years">8 years</option>
+              <option value="9 years">9 years</option>
+              <option value="10 years">10 years</option>
+              <option value="11 years">11 years</option>
+              <option value="12 years">12 years</option>
+              <option value="13 years">13 years</option>
+              <option value="14 years">14 years</option>
+              <option value="15 years">15 years</option>
+              <option value="Senior over 16 years">Senior over 16 years</option>
+              </Form.Select>
           </Form.Group>
         </Row>
 
         <Row className='mb-3'>
           <Form.Group as={Col} style={{textAlign:'center'}}>
             <Form.Label>
-                Please select the animal's adoption status:<span style={{color:'red'}}>*</span>  
+                Please select the animal's adoption status:  
             </Form.Label>
             <Form.Select name="petAdoptionStatus" value={petInput.petAdoptionStatus} onChange={handleChange} required style={{textAlign:'center'}}>
                   <option value="">Select Adoption Status</option>
@@ -147,7 +147,7 @@ function New() {
           </Form.Group>
         </Row>
         <Form.Group className='mb-3 mx-auto w-50' style={{textAlign: 'center'}}>
-          <p><span style={{color:'red'}}>*</span> means the field is required.</p>
+          <p>All fields are required.</p>
           <Button type='submit' variant='success'>Submit</Button>
         </Form.Group>
       </Form>

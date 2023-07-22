@@ -15,11 +15,11 @@ function NavigationBar() {
           textShadow: '2px 2px white'
           }}>Safe Haven Pet Adoption</h1>
       <Navbar className="font-nice" style={{backgroundColor:"#217605", color:"#E9FFD8"}}>
-        {/*<Container style={{display:'inline-block'}}>*/}
           <Nav.Link href='/' className='me-3 ms-3' style={{color:"#E9FFD8"}}>Home</Nav.Link>
             |
           <Nav.Link href='/new' className='me-3 ms-3' style={{color:"#E9FFD8"}}>New Pet</Nav.Link>
-        {/*</Container>*/}
+            |
+          <Nav.Link href='/about' className='me-3 ms-3' style={{color:"#E9FFD8"}}>About Us</Nav.Link>
       </Navbar>
     </div>
   )
