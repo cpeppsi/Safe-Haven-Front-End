@@ -22,7 +22,7 @@ This will execute the script and output the following:
 ```
 Compiled successfully!
 
-You can now view bread-frontend in the browser.  
+You can now view pet-adoption-safe-haven-frontend in the browser.  
 
   Local:            http://localhost:3000        
   On Your Network:  http://192.168.1.12:3000     
