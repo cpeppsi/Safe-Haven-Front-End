@@ -28,6 +28,7 @@ This will execute the script and output the following:
 [nodemon] starting `node index.js`
 listening on port 8080
 DB connected
+  ```
 
 ### Link to the frontend
 ---
