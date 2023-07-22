@@ -143,7 +143,7 @@ function New() {
             <Form.Label>
                 Please briefly describe the animal's bio: 
             </Form.Label>
-            <Form.Control as='textarea' name="petBio" placeholder="Animal bio" maxLength={80} value={petInput.petBio} onChange={handleChange} style={{textAlign:'center'}}/>
+            <Form.Control as='textarea' name="petBio" placeholder="Animal bio" maxLength={80} value={petInput.petBio} onChange={handleChange} required style={{textAlign:'center'}}/>
           </Form.Group>
         </Row>
         <Form.Group className='mb-3 mx-auto w-50' style={{textAlign: 'center'}}>
