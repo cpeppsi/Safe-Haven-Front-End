@@ -80,7 +80,7 @@ const display = petInput && (
       <Row className='mb-3'>
         <Form.Group as={Col} style={{textAlign:'center'}}>
           <Form.Label>
-            Animal's sex:
+            Animal's gender:
           </Form.Label>
           <Form.Select onChange={handleChange} value={petInput.petGender} name='petGender' required style={{textAlign:'center'}}>
               <option value=''>Select Gender</option>
@@ -102,10 +102,11 @@ const display = petInput && (
           </Form.Label>
           <Form.Select onChange={handleChange} value={petInput.petAge} name='petAge' required style={{textAlign:'center'}}>
             <option value=''>Select Age</option>
-            <option value='Puppy 6-8 weeks'>Puppy 6-8 weeks</option>
-            <option value='Puppy 10-12 weeks'>Puppy 10-12 weeks</option>
-            <option value='Puppy 16-18 weeks'>Puppy 16-18 weeks</option>
-            <option value='Puppy under a year'>Puppy under a year</option>
+            <option value='Puppy 0-6 weeks'>0-6 weeks</option>
+            <option value='Puppy 6-8 weeks'>6-8 weeks</option>
+            <option value='Puppy 10-12 weeks'>10-12 weeks</option>
+            <option value='Puppy 16-18 weeks'>16-18 weeks</option>
+            <option value='Puppy under a year'>under a year</option>
             <option value='1 year'>1 year</option>
             <option value='2 years'>2 years</option>
             <option value='3 years'>3 years</option>

@@ -79,7 +79,7 @@ function New() {
         <Row className='mb-3'>
           <Form.Group as={Col} style={{textAlign:'center'}}>
             <Form.Label>
-              Please select the animal's sex:
+              Please select the animal's gender:
             </Form.Label>
             <Form.Select name="petGender" value={petInput.petGender} onChange={handleChange} required style={{textAlign:'center'}}>
                 <option value="">Select Gender</option>
@@ -101,6 +101,7 @@ function New() {
             </Form.Label>
             <Form.Select name="petAge" value={petInput.petAge} onChange={handleChange} required style={{textAlign:'center'}}>
               <option value="">Select Age</option>
+              <option value="0-6 weeks">0-6 weeks</option>
               <option value="6-8 weeks">6-8 weeks</option>
               <option value="10-12 weeks">10-12 weeks</option>
               <option value="16-18 weeks">16-18 weeks</option>
