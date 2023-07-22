@@ -2,30 +2,34 @@
 
 ## This is the second milestone project for NCSU software development program by Casey, Evan, Ligia, and Mayna.
 
-### This is a fullstack MERN application which allows the admin of the mock-up "Safe Haven Shelter" to CREATE new adoption listings, UPDATE those listings and locations, and DELETE them. It also allows users to READ the listings page and explore the website with a navbar.
+### This is a fullstack MERN application which allows user of "Safe Haven Shelter" to CREATE new adoption listings for both cats and dogs, READ the adoption listings, UPDATE the adoption listings, and DELETE them. It also allows users to explore the website with a navbar and view an About page with Safe Haven Shelter's Mission.
 
---- PROJECT DUE TUESDAY 7/18 ---
+### To install
+---
+Clone from the repo and install npm will install require dependecies:
+```npm install```
 
-GOALS:
+### To run the backend
+---
+* Note Node.js must be installed for application to run [Node JS](https://nodejs.org/en/download/)
 
-- Create the Safe Haven Home/landing page where a user may choose to browse available DOGS or CATS to adopt.
-- Create CREATE page to add a new adoptable dog or cat
+From the root directory run:
+``` npm run dev ```
 
-- Create READ pages for ALL dogs and cats available to adopt
-  -Create READ page for EACH dog/cat that's available to adopt
+This will execute the script and output the following: 
+```
+> Pet-Adoption-Safe-Haven@1.0.0 dev
+> npx nodemon index.js
 
-- Create UPDATE function to update existing adoption listings and adoptee status
+[nodemon] 3.0.1
+[nodemon] to restart at any time, enter `rs`  
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node index.js`
+listening on port 8080
+DB connected
 
-- Create DELETE function to remove adoptable pets. (Immediate removal? Removal after x number of days?)
-
-- Create About Us page. Currently a catch-all place for display of group info and stretch goals (coming soon features)?
-
-- DEPLOY continuously to a host (Netlify)
-- STYLE page by end of class next Sunday 7/16
-
-STRETCH GOALS:
-
-- Donation to the shelter page
-- Other locations/shelters
-- Lost and found for pets. Would basically be user version of the admin side for listing cats, dogs, and other misc. pets
-
+### Link to the frontend
+---
+Open the front end GitHub repository using the following link:
+https://github.com/cpeppsi/Safe-Haven-Front-End.git
