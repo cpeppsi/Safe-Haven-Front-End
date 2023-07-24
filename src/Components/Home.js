@@ -14,10 +14,10 @@ function Home() {
         mode: 'no-cors'
       })
       const data = await response.json()
-      setPets(data)
+      return data
     }
 
-    fetchData()
+    setPets(fetchData())
   }, [])
 
   const display = pets.map(pet => {
