@@ -55,7 +55,7 @@ const display = petInput && (
           <Form.Label>
             Animal image URL: 
           </Form.Label>
-          <Form.Control type='text' onChange={handleChange} value={petInput.petImage} name='petImage' placeholder='Animal image URL' required style={{textAlign:'center'}}/>
+          <Form.Control type='text' onChange={handleChange} value={petInput.petImage} name='petImage' required placeholder='Animal image URL'  style={{textAlign:'center'}}/>
         </Form.Group>
 
         <Form.Group as={Col} style={{textAlign:'center'}}>
