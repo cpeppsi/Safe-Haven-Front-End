@@ -10,14 +10,7 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       const URL = `${process.env.REACT_APP_BACKEND_URI}/pets`
-      const response = await fetch(URL, {
-        mode: 'no-cors',
-        method: "post",
-        headers: {
-             "Content-Type": "application/json"
-        },
-        body: JSON.stringify(ob)
-      })
+      const response = await fetch(URL)
       const data = await response.json()
       setPets(data)
     }
