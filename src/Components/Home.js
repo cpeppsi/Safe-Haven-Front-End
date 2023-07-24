@@ -10,14 +10,12 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       const URL = `${process.env.REACT_APP_BACKEND_URI}/pets`
-      const response = await fetch(URL, {
-        mode: 'no-cors'
-      })
+      const response = await fetch(URL)
       const data = await response.json()
-      return data
+      setPets(data)
     }
 
-    setPets(fetchData())
+    fetchData()
   }, [])
 
   const display = pets.map(pet => {
