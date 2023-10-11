@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -16,7 +17,7 @@ function App() {
           <Route path="/pets/:id" element={<Pet />} />
           <Route path="/pet/update/:id" element={<UpdatePet />} />
           <Route path="/new" element={<New />} />
-          <Route path="/about" element={<About/>}/>
+          <Route path="/about" element={<About />} />
         </Routes>
       </Router>
     </div>
